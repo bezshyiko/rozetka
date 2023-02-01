@@ -100,6 +100,9 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
 }
 
@@ -113,6 +116,7 @@ h6 {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  max-width: 1200px;
 }
 
 .wrapper > * {
@@ -125,6 +129,11 @@ h6 {
 Наприклад header__container, main__container і т.п.
 Сніппет (HTML): cnt
 */
+
+[class*=__container] {
+  max-width: 75rem;
+  margin: 0 auto;
+}
 
 [class*=-ibg] {
   position: relative;
@@ -529,6 +538,12 @@ h6 {
   background-color: #f7f7f7;
 }
 
+.set-left picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .set-left__title {
   padding-bottom: 80px;
 }
@@ -567,10 +582,19 @@ h6 {
   position: relative;
 }
 
+.set-right__row picture {
+  width: 100%;
+}
+
 .set-right__row:first-child {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.set-right__row:last-child picture {
+  width: auto;
+  height: 60%;
 }
 
 .set-right__title {
@@ -585,7 +609,7 @@ h6 {
 
 .set-right__img.bottom {
   width: auto;
-  height: 60%;
+  height: 100%;
 }
 
 .title {
